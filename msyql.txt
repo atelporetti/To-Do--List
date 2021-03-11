@@ -1,0 +1,2 @@
+iniciar servicio mysql
+mysql -u root -p

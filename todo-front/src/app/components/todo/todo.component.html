@@ -1,0 +1,33 @@
+<div class="flex-row">
+
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <div class="input-group-text">
+        <input type="checkbox" aria-label="Radio button for following text input" (change)="onChangeState()"
+               [checked]="todo.state">
+      </div>
+    </div>
+    <input type="text" class="form-control" aria-label="Text input with radio button" [value]="todo.description"
+           disabled="disabled">
+    <button (click)="onEditTodo(modalTodo, todo)" class="btn btn-info m-auto">Edit</button>
+    <button (click)="onDeleteTodo()" class="btn btn-dark m-auto">Delete</button>
+  </div>
+
+  <ng-template #modalTodo let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Editing task "{{todo.description}}"</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <input type="text" class="form-control" [placeholder]="todo.description" [(ngModel)]="newDescription">
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-success" (click)="onSaveTodo()">Save</button>
+      <button type="button" class="btn btn-outline-danger" (click)="modal.close('Save click')">Cancel</button>
+    </div>
+  </ng-template>
+
+
+</div>

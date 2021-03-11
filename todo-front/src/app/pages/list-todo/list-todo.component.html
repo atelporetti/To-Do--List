@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="text-center">To-Do List</h1>
+  <div class="todo-list" *ngIf="todoList.length>0">
+    <ng-container *ngFor="let t of todoList">
+      <app-todo [todo]="t" (deleteTodo)="deleteItemTodo($event)"></app-todo>
+    </ng-container>
+  </div>
+  <div *ngIf="todoList.length<=0" class="text-center">
+    <h3>Without tasks</h3>
+  </div>
+  <hr>
+
+  <div class="d-flex flex-row justify-content-center">
+    <input class="form-control " type="text" [(ngModel)]="newTodo">
+    <button class="btn btn-outline-primary" (click)="addTodoItem()">Add</button>
+  </div>
+</div>
