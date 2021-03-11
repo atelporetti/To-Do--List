@@ -19,6 +19,7 @@ We need to install [Node.js](https://nodejs.org/en/download/), [JDK 8](https://w
 ## Run Project 🔧
 
 _1. Update the attribute spring.datasource.password=password in line 12 in {base_directory}/todo-back/src/main/resources/application.properties [here](https://github.com/atelporetti/To-Do--List-Ensolvers/blob/master/todo-back/src/main/resources/application.properties), with your root user password_
+
 _2. Run the 'sh deploy.sh' command in your terminal_
 
 ## About
